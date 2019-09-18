@@ -4,7 +4,7 @@ import {Image} from "react-native";
 import Home from "../screens/Home";
 import About from "../screens/About";
 import FragScreen from "../screens/FragScreen";
-
+import Hello from "../screens/Hello";
 class Routes extends Component {
 
   renderHomeIcon({focused})  {
@@ -23,6 +23,7 @@ renderAboutIcon({focused})  {
           <Scene key="user">
           <Scene tabs  key="Home"  hideNavBar={true}  tabBarPosition="bottom" swipeEnabled={true} tabBarStyle={{height: 65, backgroundColor:'#ffffff', paddingVertical: 4}}>
             <Scene key="Home" hideNavBar={true}  icon={this.renderHomeIcon} component={Home} />
+            <Scene key="Hello" hideNavBar={true}  icon={this.renderHomeIcon} component={Hello} />
             <Scene key="Test"  hideNavBar={true}  icon={this.renderAboutIcon} component={FragScreen}  />
             <Scene key="About"  hideNavBar={true}  icon={this.renderAboutIcon} component={About}  />
       </Scene>
