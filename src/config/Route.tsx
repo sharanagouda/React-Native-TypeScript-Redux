@@ -5,6 +5,8 @@ import Home from "../screens/Home";
 import About from "../screens/About";
 import FragScreen from "../screens/FragScreen";
 import Hello from "../screens/Hello";
+import LoginView from "../screens/Login";
+import HomeMenu from "../screens/Menu"
 class Routes extends Component {
 
   renderHomeIcon({focused})  {
@@ -21,14 +23,17 @@ renderAboutIcon({focused})  {
       return (
         <Router>
           <Scene key="user">
-          <Scene tabs  key="Home"  hideNavBar={true}  tabBarPosition="bottom" swipeEnabled={true} tabBarStyle={{height: 65, backgroundColor:'#ffffff', paddingVertical: 4}}>
-            <Scene key="Home" hideNavBar={true}  icon={this.renderHomeIcon} component={Home} />
-            <Scene key="Hello" hideNavBar={true}  icon={this.renderHomeIcon} component={Hello} />
-            <Scene key="Test"  hideNavBar={true}  icon={this.renderAboutIcon} component={FragScreen}  />
-            <Scene key="About"  hideNavBar={true}  icon={this.renderAboutIcon} component={About}  />
-      </Scene>
+          {/* <Scene tabs  key="Home"  hideNavBar={true}  tabBarPosition="bottom" swipeEnabled={true} tabBarStyle={{height: 65, backgroundColor:'#ffffff', paddingVertical: 4}}>
+            <Scene key="home" hideNavBar={true}  icon={this.renderHomeIcon} component={Home} />
+            <Scene key="login" hideNavBar={true}  icon={this.renderHomeIcon} component={LoginView} />
+            <Scene key="test"  hideNavBar={true}  icon={this.renderAboutIcon} component={FragScreen}  />
+            <Scene key="about"  hideNavBar={true}  icon={this.renderAboutIcon} component={About}  />
+      </Scene> */}
+            <Scene key="menu" component={HomeMenu} title="Menu" />
             <Scene key="about" component={About} title="about" />
             <Scene key="home" component={Home} title="Home" />
+            <Scene key="login" hideNavBar={true}  icon={this.renderHomeIcon} component={LoginView} />
+            <Scene key="test"  hideNavBar={true}  icon={this.renderAboutIcon} component={FragScreen}  />
           </Scene>
         </Router>
       );
